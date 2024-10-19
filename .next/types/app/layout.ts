@@ -1,4 +1,4 @@
-// File: /home/zweli/Projects/2024/clients/mpumelelo/src/app/layout.js
+// File: /home/mattfourie/repos/namoota/mpumelelo/mpumelelo/src/app/layout.js
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
