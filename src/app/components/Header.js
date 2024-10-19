@@ -7,7 +7,7 @@ export default function Header() {
       <Container>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My Foundation
+            Mpumelelo Foundation
           </Typography>
           <Button color="inherit">About</Button>
           <Button color="inherit">Our Work</Button>
