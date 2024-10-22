@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Box, Typography, Container, Grid, Card, CardContent, CardMedia, Accordion, AccordionSummary, AccordionDetails, Divider } from '@mui/material';
+import { Box, Button, Typography, Container, Grid, Card, CardContent, CardMedia, Accordion, AccordionSummary, AccordionDetails, Divider } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
@@ -55,6 +55,10 @@ export default function About() {
     }
   ];
 
+  // Create a state variable to track whether the full text is shown:
+  const [showFullText, setShowFullText] = useState(false);
+
+
   return (
     <>
       <Header />
@@ -72,16 +76,25 @@ export default function About() {
               on the belief that every child deserves equal opportunities. We are committed to uplifting both boys and 
               girls to break the cycle of poverty and inequality, and pursue their dreams without barriers.
             </Typography>
-            <Typography variant="body1" align="start" sx={{ mb: 2, mx: 'auto', color: 'black' }}>
-              At Caring, we understand that a child’s potential should not be limited by their undeserved backgrounds or 
-              circumstances. So, we provide suited programs that address the unique needs of each child we serve. Through 
-              partnerships with local communities, schools, and health organizations, we try to create a nurturing environment 
-              where boys and girls can thrive and become empowered individuals.
-            </Typography>
-            <Typography variant="body1" align="start" sx={{ mb: 6, mx: 'auto', color: 'black' }}>
-              Our dedicated team of volunteers and staff work tirelessly to deliver essential resources, mentorship, and advocacy. 
-              We believe that by investing in the wellbeing of our young ones, we are building a brighter future for everyone. 
-            </Typography>
+            {showFullText && (
+              <>
+                <Typography variant="body1" align="start" sx={{ mb: 2, mx: 'auto', color: 'black' }}>
+                  At Caring, we understand that a child’s potential should not be limited by their undeserved backgrounds or 
+                  circumstances. So, we provide suited programs that address the unique needs of each child we serve. Through 
+                  partnerships with local communities, schools, and health organizations, we try to create a nurturing environment 
+                  where boys and girls can thrive and become empowered individuals.
+                </Typography>
+                <Typography variant="body1" align="start" sx={{ mb: 6, mx: 'auto', color: 'black' }}>
+                  Our dedicated team of volunteers and staff work tirelessly to deliver essential resources, mentorship, and advocacy. 
+                  We believe that by investing in the wellbeing of our young ones, we are building a brighter future for everyone. 
+                </Typography>
+              </>
+            )}
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+              <Button variant="text" color="primary" onClick={() => setShowFullText(!showFullText)} sx={{ textTransform: 'none' }}>
+                {showFullText ? 'Show Less' : 'Show More'}
+              </Button>
+            </Box>
           </Box>
           {/* Grid for sections */}
           <Grid container spacing={0.5} sx={{ width: { xs: 'auto', md: '90%' } }}>
@@ -136,22 +149,22 @@ export default function About() {
 
       {/* Activities Section */}
       {/* Banner */}
-      <Box sx={{ width: '100%', backgroundColor: 'white', py: 30, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <Box sx={{ width: '100%', backgroundColor: 'white', pb: 30, pt: 25, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', background: '#353535', opacity: '0.8' , py: 3, flexDirection: { xs: 'column', sm: 'column', md: 'row' }}}>
           <Container sx={{ width: { xs: '60%', sm: '40%'} }}>
             <Typography variant="h4" component="h1" gutterBottom color="white" fontWeight="950" sx={{ display: 'flex', justifyContent: 'end', alignItems: 'center', height: '100%', width: '100%', py: 5 }}>
               ACTIVITIES
             </Typography>
           </Container>
-          <Container sx={{ xs: '100%', sm: '60%', py: 5}}>
-            <Typography variant="body1" color="white" maxWidth="md" sx={{ textAlign: 'start', width: { xs: '100%', sm: '50%'}, fontSize: { xs: '16px', sm: '18px'} }}>
+          <Container sx={{ xs: '100%', sm: '60%', py: 5, textAlign: {xs: 'center', sm: 'center', md: 'start'}}}>
+            <Typography variant="body1" color="white" maxWidth="md" sx={{ fontSize: { xs: '16px', sm: '18px'} }}>
               In a bid to address the immediate needs of the boys and girls in rural areas.
             </Typography>
             {/* Add the Divider here */}
-            <Box display="flex" justifyContent="start">
-              <Divider sx={{ my: 2, backgroundColor: 'rgba(255, 255, 255, 0.5)', height: '0.5px', width: { xs: '60%', sm: '20%'} }} />
+            <Box display="flex" sx={{justifyContent: {xs: 'center', sm: 'center', md: 'start'} }}>
+              <Divider sx={{ my: 2, backgroundColor: 'rgba(25, 118, 210)', height: '1px', width: { xs: '60%', sm: '20%'} }} />
             </Box>
-            <Typography variant="body1" color="white" maxWidth="md" sx={{ textAlign: 'start', fontSize: { xs: '16px', sm: '18px'} }}>
+            <Typography variant="body1" color="white" maxWidth="md" sx={{ fontSize: { xs: '16px', sm: '18px'} }}>
               here are some of the activities we do.
             </Typography>
           </Container>
