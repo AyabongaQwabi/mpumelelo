@@ -22,9 +22,9 @@ const Footer = () => {
             <Typography variant="h6" sx={{fontFamily: 'Helvetica', fontWeight: 'bold', fontSize: '20px'}}>Useful Links</Typography>
             <ul style={{ listStyleType: 'none'}}>
               <li style={{ marginTop: '10px', fontFamily: 'Helvetica', fontSize: '18px' }}>
-                <Link href="#" color="inherit" sx={{ textDecoration: 'none', transition: 'color 0.3s ease', '&:hover': { color: '#142d4c'} }}>Home</Link></li>
+                <Link href="/" color="inherit" sx={{ textDecoration: 'none', transition: 'color 0.3s ease', '&:hover': { color: '#142d4c'} }}>Home</Link></li>
               <li style={{ marginTop: '15px', fontFamily: 'Helvetica', fontSize: '18px' }} >
-                <Link href="#" color="inherit" sx={{ textDecoration: 'none', transition: 'color 0.3s ease', '&:hover': { color: '#142d4c'} }}>About us</Link>
+                <Link href="/about" color="inherit" sx={{ textDecoration: 'none', transition: 'color 0.3s ease', '&:hover': { color: '#142d4c'} }}>About us</Link>
               </li>
               <li style={{ marginTop: '15px', fontFamily: 'Helvetica', fontSize: '18px' }} >
                 <Link href="#" color="inherit" sx={{ textDecoration: 'none', transition: 'color 0.3s ease', '&:hover': { color: '#142d4c'} }}>Contact Us</Link>
