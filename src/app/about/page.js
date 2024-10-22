@@ -15,6 +15,7 @@ export default function About() {
      setExpanded(isExpanded ? panel : false);
    };
 
+  //  Content for the hero section
   const sections = [
     { 
       title: 'OUR VISION', 
@@ -32,6 +33,7 @@ export default function About() {
     },
   ];
 
+  // Content for the dropdown menu
   const activitiesItems = [
     {
       question: "PROVIDE NUTRITIONAL SUPPORT",
