@@ -76,6 +76,7 @@ export default function About() {
               on the belief that every child deserves equal opportunities. We are committed to uplifting both boys and 
               girls to break the cycle of poverty and inequality, and pursue their dreams without barriers.
             </Typography>
+            {/* Button to show full text */}
             {showFullText && (
               <>
                 <Typography variant="body1" align="start" sx={{ mb: 2, mx: 'auto', color: 'black' }}>
@@ -114,10 +115,6 @@ export default function About() {
                         <Typography variant="body2" sx={{ mb: 2, fontSize: '18px' }}>
                           {section.description}
                         </Typography>
-                        {/* Link to another page */}
-                        {/* <Button variant="text" href={section.linkUrl} sx={{ color: 'white', fontWeight: 'bold', textTransform: 'none' }}>
-                          {section.linkText} &gt;&gt;
-                        </Button> */}
                       </CardContent>
                     </>
                   ) : (
@@ -130,10 +127,6 @@ export default function About() {
                         <Typography variant="body2" sx={{ mb: 2, fontSize: '18px' }}>
                           {section.description}
                         </Typography>
-                         {/* Link to another page */}
-                        {/* <Button variant="text" href={section.linkUrl} sx={{ color: 'white', fontWeight: 'bold', textTransform: 'none' }}>
-                          {section.linkText} &gt;&gt;
-                        </Button> */}
                       </CardContent>
                       <Box sx={{ width: { xs: '100%', md: '50%' }, height: { xs: '300px', md: 'auto' }, overflow: 'hidden' }}>
                         <CardMedia component="img"sx={{ width: '100%', height: '100%', objectFit: 'cover' }} image={section.imgSrc} alt={section.title}/>
@@ -173,15 +166,7 @@ export default function About() {
         <Box sx={{ width: { xs: '100%', sm: '50%' } }}>
           {activitiesItems.map((item, index) => (
             <Accordion key={index} expanded={expanded === `panel${index + 1}`} onChange={handleChange(`panel${index + 1}`)}
-              sx={{
-                borderTop: 1,
-                borderBottom: index === activitiesItems.length - 1 ? 1 : 0,
-                borderColor: 'divider',
-                '&:before': { display: 'none' }, 
-                boxShadow: 'none',
-                py: 2,
-              }}
-            >
+              sx={{ borderTop: 1, borderBottom: index === activitiesItems.length - 1 ? 1 : 0, borderColor: 'divider', '&:before': { display: 'none' }, boxShadow: 'none', py: 2,}}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls={`panel${index + 1}-content`} id={`panel${index + 1}-header`}>
                 <Typography fontWeight="bold" sx={{ fontSize: { xs: '15px', sm: '20px' } }}>
                   {item.question}
