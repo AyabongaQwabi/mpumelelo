@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Box, Button, Typography, Container, Grid, Card, CardContent, CardMedia, Accordion, AccordionSummary, AccordionDetails, Divider } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -63,7 +62,6 @@ export default function About() {
 
   return (
     <>
-      <Header />
       {/* Grid of content and Images */}
       <Box sx={{ width: '100%', backgroundColor: 'white', justifyContent: 'center' }}>
         <Container maxWidth="lg" sx={{ py: 6, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
