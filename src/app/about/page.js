@@ -100,14 +100,16 @@ export default function About() {
             </Box>
           </Box>
           {/* Grid for sections */}
-          <Grid container spacing={0.5} sx={{ width: { xs: 'auto', md: '90%' } }}>
+          <Grid container sx={{ width: { xs: 'auto', md: '90%' } }}>
             {sections.map((section, index) => (
               <Grid item xs={12} key={index}>
                 <Card sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, height: { xs: 'auto', md: '300px' } }}>
+                  <Box sx={{ display: { xs: 'flex', md: 'none' }, width: '100%', height: '300px', overflow: 'hidden' }} >
+                    <CardMedia component="img" sx={{ width: '100%', height: '100%', objectFit: 'cover' }} image={section.imgSrc} alt={section.title} />
+                  </Box>
                   {index % 2 === 0 ? (
                     <>
-                      {/* Image Left, Content Right */}
-                      <Box sx={{ width: { xs: '100%', md: '50%' }, height: { xs: '300px', md: 'auto' }, overflow: 'hidden' }}>
+                      <Box sx={{ display: { xs: 'none', md: 'block' }, width: { md: '50%' }, height: 'auto', overflow: 'hidden'}}>
                         <CardMedia component="img" sx={{ width: '100%', height: '100%', objectFit: 'cover' }} image={section.imgSrc} alt={section.title}/>
                       </Box>
                       <CardContent sx={{ width: { xs: '100%', md: '50%' }, backgroundColor: '#007cc2', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', px: 6 }}>
@@ -121,7 +123,6 @@ export default function About() {
                     </>
                   ) : (
                     <>
-                      {/* Content Left, Image Right */}
                       <CardContent sx={{ width: { xs: '100%', md: '50%' }, backgroundColor: '#007cc2', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', px: 6 }}>
                         <Typography variant="h5" component="h2" sx={{ fontWeight: '950', mb: 1 }}>
                           {section.title}
@@ -130,8 +131,20 @@ export default function About() {
                           {section.description}
                         </Typography>
                       </CardContent>
-                      <Box sx={{ width: { xs: '100%', md: '50%' }, height: { xs: '300px', md: 'auto' }, overflow: 'hidden' }}>
-                        <CardMedia component="img"sx={{ width: '100%', height: '100%', objectFit: 'cover' }} image={section.imgSrc} alt={section.title}/>
+                      <Box 
+                        sx={{ 
+                          display: { xs: 'none', md: 'block' }, 
+                          width: { md: '50%' }, 
+                          height: 'auto', 
+                          overflow: 'hidden' 
+                        }}
+                      >
+                        <CardMedia 
+                          component="img" 
+                          sx={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                          image={section.imgSrc} 
+                          alt={section.title}
+                        />
                       </Box>
                     </>
                   )}
@@ -139,12 +152,13 @@ export default function About() {
               </Grid>
             ))}
           </Grid>
+
         </Container>   
       </Box>
 
       {/* Activities Section */}
       {/* Banner */}
-      <Box sx={{ width: '100%', backgroundColor: 'white', pb: 30, pt: 25, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <Box sx={{ width: '100%', backgroundColor: 'white', pb: 30, pt: { xs: 15, sm: 25 } , display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', background: '#353535', opacity: '0.8' , py: 3, flexDirection: { xs: 'column', sm: 'column', md: 'row' }}}>
           <Container sx={{ width: { xs: '60%', sm: '40%'} }}>
             <Typography variant="h4" component="h1" gutterBottom color="white" fontWeight="950" sx={{ display: 'flex', justifyContent: 'end', alignItems: 'center', height: '100%', width: '100%', py: 5 }}>
