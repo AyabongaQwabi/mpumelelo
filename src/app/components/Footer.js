@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Grid, Typography, TextField, Button, Box, Link, Divider } from '@mui/material';
 import { Home, Info, ContactMail, Email, Facebook, Instagram, LinkedIn, Twitter } from '@mui/icons-material';
-
+import Image from 'next/image';
 const Footer = () => {
   return (
     <Box component="footer" sx={{ backgroundColor: 'primary.dark', color: 'white', py: 4, fontFamily: '"Roboto", "Montserrat", sans-serif'}}>
@@ -11,7 +11,14 @@ const Footer = () => {
 
           {/* About Section */}
           <Grid item xs={12} md={4}>
-            <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold' }}>Mpumelelo Foundation logo</Typography>
+            <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold' }}>
+              <Image 
+                src="/images/logo.png" 
+                width={274} 
+                height={101}
+                alt="MPUMELELO FOUNDATION LOGO"
+              />
+            </Typography>
             <Typography variant="body1" paragraph sx={{marginTop: '30px', fontFamily: 'Helvetica', fontSize: '18px'}}>
               Empowering Boys and Girls, Breaking Barriers, Building Dreams.
             </Typography>
