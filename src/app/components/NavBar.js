@@ -72,7 +72,7 @@ const Header = () => {
       >
         <Box
           component='a'
-          href='javascript:void(0)'
+          href='/'
           sx={{
             flexShrink: 0,
             width: { xs: '90%', sm: 'auto' },
