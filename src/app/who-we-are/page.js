@@ -64,14 +64,12 @@ export default function About() {
     <>
       {/* Grid of content and Images */}
       <Box sx={{ width: '100%', backgroundColor: 'white', justifyContent: 'center' }}>
-        <Container maxWidth="lg" sx={{ py: 6, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           {/* Header and info */}
-          <Box sx={{ mt: 10, mb: 6, maxWidth: '900px'}}>
             <Typography component="h1" align="center" sx={{ mb: 4, fontWeight: '950', fontSize: '32px', color: '#1976D2' }}>
               ABOUT US
               {/* <Box component="span" sx={{ color: '#1976D2' }}> US</Box> */}
             </Typography>
-            <Typography variant="body1" align="start" sx={{ mb: 2, mx: 'auto', color: 'black' }}>
+            <Typography variant="body1" align="center" sx={{ mb: 2, mx: 'auto', color: 'black' }}>
               Welcome to Mpumeleolo Caring for Boys and Girls Foundation, also known as “Caring,” an organization founded 
               on the belief that every child deserves equal opportunities. We are committed to uplifting both boys and 
               girls to break the cycle of poverty and inequality, and pursue their dreams without barriers.
@@ -79,13 +77,13 @@ export default function About() {
             {/* Button to show full text */}
             {showFullText && (
               <>
-                <Typography variant="body1" align="start" sx={{ mb: 2, mx: 'auto', color: 'black' }}>
+                <Typography variant="body1" align="center" sx={{ mb: 2, mx: 'auto', color: 'black' }}>
                   At Caring, we understand that a child’s potential should not be limited by their undeserved backgrounds or 
                   circumstances. So, we provide suited programs that address the unique needs of each child we serve. Through 
                   partnerships with local communities, schools, and health organizations, we try to create a nurturing environment 
                   where boys and girls can thrive and become empowered individuals.
                 </Typography>
-                <Typography variant="body1" align="start" sx={{ mb: 6, mx: 'auto', color: 'black' }}>
+                <Typography variant="body1" align="center" sx={{ mb: 6, mx: 'auto', color: 'black' }}>
                   Our dedicated team of volunteers and staff work tirelessly to deliver essential resources, mentorship, and advocacy. 
                   We believe that by investing in the wellbeing of our young ones, we are building a brighter future for everyone. 
                 </Typography>
@@ -96,9 +94,8 @@ export default function About() {
                 {showFullText ? 'Show Less' : 'Show More'}
               </Button>
             </Box>
-          </Box>
           {/* Grid for sections */}
-          <Grid container sx={{ width: { xs: 'auto', md: '90%' } }}>
+          <Grid container sx={{ width: { xs: 'auto', md: '100%' } }}>
             {sections.map((section, index) => (
               <Grid item xs={12} key={index}>
                 <Card sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, height: { xs: 'auto', md: '300px' } }}>
@@ -150,8 +147,6 @@ export default function About() {
               </Grid>
             ))}
           </Grid>
-
-        </Container>   
       </Box>
 
       {/* Activities Section */}
