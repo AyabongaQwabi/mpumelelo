@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import { Box, Button, Typography, Container, Grid, Card, CardContent, CardMedia, Accordion, AccordionSummary, AccordionDetails, Divider, Grid2 } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function IntroductionSection() {
 
