@@ -1,7 +1,7 @@
 'use client';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
-import CustomCarousel from './components/HomeCarouselItems';
+// import CustomCarousel from './components/HomeCarouselItems';
 import IntroductionSection from './components/IntroductionSecton';
 
 
@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       {/* Grid of content and Images */}
       <IntroductionSection />
-      <CustomCarousel />
+      {/* <CustomCarousel /> */}
       <Footer />
     </>
   );
