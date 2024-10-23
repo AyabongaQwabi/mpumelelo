@@ -12,7 +12,7 @@ export default function IntroductionSection() {
     { 
       title: 'EDUCATION', 
       description: 'Mpumeleolo Caring for Boys and Girls Foundation is transforming education for children in rural areas by offering tutoring and extra classes in science and mathematics. By providing essential academic support and resources, we empower young learners to achieve their full potential, paving the way for brighter futures and lifelong success.',
-      imgSrc: '/images/hero2.jpg', // Replace with correct image URL
+      imgSrc: '/images/education.jpg', 
       linkText: '',
       linkUrl: '#'
     },
@@ -26,7 +26,7 @@ export default function IntroductionSection() {
     { 
         title: 'HEALTH', 
         description: 'The foundation prioritizes children\'s health by organizing daily feeding programs and distributing hygiene essentials. By ensuring access to nutritious meals and personal care products, we promote physical well-being and self-esteem among children, fostering a culture of health awareness that benefits not only individuals but also the broader community.',
-        imgSrc: '/images/hero3.jpg', 
+        imgSrc: '/images/health.jpg', 
         linkText: 'More about how we work',
         linkUrl: '#'
       },
