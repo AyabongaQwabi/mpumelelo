@@ -52,7 +52,13 @@ export default function Hero() {
         <Typography variant="h5" sx={{ mb: 4 }}>
           Join us in making a difference around the globe.
         </Typography>
-        <Button variant="contained" color="secondary">
+        <Button variant="contained" 
+          sx={{
+            background: '#1999e7',
+            color: 'white',
+            WebkitAppearance: 'none',
+            border: 'none'
+          }}>
           Learn More
         </Button>
       </Container>
