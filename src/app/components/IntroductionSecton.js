@@ -47,11 +47,11 @@ export default function IntroductionSection() {
                 <Grid container spacing={2}>
                     {/* First Div */}
                     <Grid item xs={12} md={6}>
-                        <Typography component="h1" align="center" sx={{ mb: 4, fontWeight: '950', fontSize: '32px', color: '#1976D2' }}>
+                        <Typography variant="h2" align="center" fontWeight="medium" sx={{ mb: 4, fontSize: '32px', color: '#00B5E2' }}>
                         WHO WE ARE
                         {/* <Box component="span" sx={{ color: '#1976D2' }}> US</Box> */}
                         </Typography>
-                        <Typography variant="body1" align="start" sx={{ mb: 2, mx: 'auto', color: 'black' }}>
+                        <Typography variant="body1" align="start" fontWeight="medium" sx={{ mb: 2, mx: 'auto', color: '#333333' }}>
                         Welcome to Mpumeleolo Caring for Boys and Girls Foundation, also known as “Caring,” an organization founded 
                         on the belief that every child deserves equal opportunities. We are committed to uplifting both boys and 
                         girls to break the cycle of poverty and inequality, and pursue their dreams without barriers.
@@ -66,11 +66,11 @@ export default function IntroductionSection() {
 
                     {/* Second Div */}
                     <Grid item xs={12} md={6}>
-                        <Typography component="h1" align="center" sx={{ mb: 4, fontWeight: '950', fontSize: '32px', color: '#1976D2' }}>
+                        <Typography variant="h2" align="center" fontWeight="medium" sx={{ mb: 4, fontSize: '32px', color: '#00B5E2' }}>
                         WHY WE DO IT
                         {/* <Box component="span" sx={{ color: '#1976D2' }}> US</Box> */}
                         </Typography>
-                        <Typography variant="body1" align="start" sx={{ mb: 2, mx: 'auto', color: 'black' }}>
+                        <Typography variant="body1" align="start" fontWeight="medium" sx={{ mb: 2, mx: 'auto', color: '#33333' }}>
                             To alleviate poverty and change lives. At Mpumelelo foundation we believe it takes a village to raise children.
                             In South Africa a significant number of children go to bed hungry and sometimes struggle to afford the basic life needs
                             such as toiletries and clothes. This affects their education and some end up dropping out of school. 
@@ -82,10 +82,10 @@ export default function IntroductionSection() {
                         </Box> 
                     </Grid>
                 </Grid>
-                <Typography component="h1" align="center" sx={{ mb: 4, fontWeight: '950', fontSize: '32px', color: '#1976D2' }}>
+                <Typography variant="h2" align="center" fontWeight="medium" sx={{ mb: 4, fontSize: '32px', color: '#00B5E2' }}>
                     OUR WORK
                 </Typography>
-                <Typography align="center" component="h3" sx={{ mb: 4, fontWeight: '350', fontSize: '32px', color: '#333' }}>
+                <Typography align="center" variant="h2" fontWeight="medium" sx={{ mb: 4, fontSize: '32px', color: '#333333' }}>
                     LEARN MORE ABOUT OUR EFFORTS TO MAKE THE WORLD A BETTER PLACE
                 </Typography>
           </Box>
@@ -102,22 +102,22 @@ export default function IntroductionSection() {
                       <Box sx={{ display: { xs: 'none', md: 'block' }, width: { md: '50%' }, height: 'auto', overflow: 'hidden'}}>
                         <CardMedia component="img" sx={{ width: '100%', height: '100%', objectFit: 'cover' }} image={section.imgSrc} alt={section.title}/>
                       </Box>
-                      <CardContent sx={{ width: { xs: '100%', md: '50%' }, backgroundColor: '#007cc2', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', px: 6 }}>
-                        <Typography variant="h5" component="h2" sx={{ fontWeight: '950', mb: 1 }}>
+                      <CardContent sx={{ width: { xs: '100%', md: '50%' }, backgroundColor: '#00B5E2', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', px: 6 }}>
+                        <Typography variant="h5" component="h2" fontWeight="medium" sx={{ fontSize: '32px', mb: 1 }}>
                           {section.title}
                         </Typography>
-                        <Typography variant="body2" sx={{ mb: 2, fontSize: '18px' }}>
+                        <Typography variant="body2" fontWeight="medium" sx={{ mb: 2, fontSize: '18px' }}>
                           {section.description}
                         </Typography>
                       </CardContent>
                     </>
                   ) : (
                     <>
-                      <CardContent sx={{ width: { xs: '100%', md: '50%' }, backgroundColor: '#007cc2', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', px: 6 }}>
-                        <Typography variant="h5" component="h2" sx={{ fontWeight: '950', mb: 1 }}>
+                      <CardContent sx={{ width: { xs: '100%', md: '50%' }, backgroundColor: '#00B5E2', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', px: 6 }}>
+                        <Typography variant="h5" component="h2" fontWeight="medium" sx={{ fontSize: '32px', mb: 1 }}>
                           {section.title}
                         </Typography>
-                        <Typography variant="body2" sx={{ mb: 2, fontSize: '18px' }}>
+                        <Typography variant="body2" fontWeight="medium" sx={{ mb: 2, fontSize: '18px' }}>
                           {section.description}
                         </Typography>
                       </CardContent>

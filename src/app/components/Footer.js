@@ -4,7 +4,7 @@ import { Home, Info, ContactMail, Email, Facebook, Instagram, LinkedIn, Twitter 
 import Image from 'next/image';
 const Footer = () => {
   return (
-    <Box component="footer" sx={{ backgroundColor: 'primary.dark', color: 'white', py: 4, fontFamily: '"Roboto", "Montserrat", sans-serif'}}>
+    <Box component="footer" sx={{ backgroundColor: '#e0e0e0', color: '#333333', py: 4, fontFamily: '"Roboto", "Montserrat", sans-serif'}}>
       {/* Footer Links and Information */}
       <Container maxWidth="lg" sx={{ mt: 4 }}>
         <Grid container spacing={4} sx={{display: 'flex', justifyContent: 'space-between'}}>
@@ -64,7 +64,7 @@ const Footer = () => {
                     width: '40px',
                     height: '40px',
                     borderRadius: '50%',
-                    color: 'white',
+                    color: '#00B5E2',
                     transition: 'all 0.5s ease',
                     '&:hover': {
                       backgroundColor: 'white',

@@ -144,7 +144,7 @@ const Header = () => {
                   display: { xs: 'none', sm: 'flex' },
                   px: 3,
                   py: 1,
-                  background: '#1999e7',
+                  background: '#00B5E2',
                   color: 'white',
                   borderLeft: '8px solid white',
                 }}
