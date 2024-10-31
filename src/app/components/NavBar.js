@@ -67,7 +67,8 @@ const Header = () => {
           py: { xs: 2, lg: 3 },
           px: { xs: 2, lg: 10 },
           minHeight: { xs: 60, lg: 80 },
-          borderBottom: '1px solid #e0e0e0',
+          borderBottom: '1px solid #fff',
+          boxShadow: 'none',
         }}
       >
         <Box

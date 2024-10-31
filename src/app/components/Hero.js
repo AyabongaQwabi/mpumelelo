@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button, Container } from '@mui/material';
 
@@ -44,24 +44,33 @@ export default function Hero() {
           zIndex: 1,
         }}
       />
-      
-      <Container sx={{ position: 'relative', zIndex: 2 }}>
-        <Typography variant="h2" sx={{ mb: 2 }}>
+
+      <Box
+        sx={{
+          position: 'relative',
+          zIndex: 2,
+          width: '100%',
+          px: { md: 6, xs: 2 },
+        }}
+      >
+        <Typography variant='h2' sx={{ mb: 2 }}>
           Empowering Communities, Changing Lives
         </Typography>
-        <Typography variant="h5" sx={{ mb: 4 }}>
+        <Typography variant='h5' sx={{ mb: 4 }}>
           Join us in making a difference around the globe.
         </Typography>
-        <Button variant="contained" 
+        <Button
+          variant='contained'
           sx={{
             background: '#1999e7',
             color: 'white',
             WebkitAppearance: 'none',
-            border: 'none'
-          }}>
+            border: 'none',
+          }}
+        >
           Learn More
         </Button>
-      </Container>
+      </Box>
     </Box>
   );
 }
