@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 // import CustomCarousel from './components/HomeCarouselItems';
 import IntroductionSection from './components/IntroductionSecton';
 
-
 export default function Home() {
   return (
     <>
@@ -12,7 +11,6 @@ export default function Home() {
       {/* Grid of content and Images */}
       <IntroductionSection />
       {/* <CustomCarousel /> */}
-      <Footer />
     </>
   );
 }
