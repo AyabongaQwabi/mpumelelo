@@ -168,7 +168,7 @@ export default function IntroductionSection() {
                   mb: 2,
                   mx: 'auto',
                   color: '#33333',
-                  px: { md: 6 },
+                  px: { md: 4, sm: 2 },
                   fontSize: '1.2rem',
                 }}
               >
