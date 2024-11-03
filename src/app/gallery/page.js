@@ -9,13 +9,9 @@ const galleryItems = [
   },
   {
     img: '/images/image2.jpeg',
-    label: 'Tech',
-    // span: 2,
   },
   {
     img: '/images/image3.jpeg',
-    label: 'Dev',
-    // span: 2,
   },
   {
     img: '/images/image4.jpeg',
