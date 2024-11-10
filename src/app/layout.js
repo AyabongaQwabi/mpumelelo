@@ -14,14 +14,11 @@ const geistMono = localFont({
   weight: '100 900',
 });
 
-// export const metadata = {
-//   title: 'Mpumelelo Foundation',
-//   description: 'Created by Namoota',
-// };
 
 export async function generateMetadata({ params, searchParams }, parent) {
-  const path = '/' // You can get the current path using other methods
-  const seoData = seoConfig[path] || seoConfig.default;
+  // Get the current pathname from the URL
+  const pathname = params?.slug ? `/${params.slug}` : '/';
+  const seoData = seoConfig[pathname] || seoConfig.default;
 
   return {
     title: seoData.title,
