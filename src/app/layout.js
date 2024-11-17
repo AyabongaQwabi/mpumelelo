@@ -2,6 +2,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import { seoConfig } from './seoConfig';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -14,10 +15,22 @@ const geistMono = localFont({
   weight: '100 900',
 });
 
-export const metadata = {
-  title: 'Mpumelelo Foundation',
-  description: 'Created by Namoota',
-};
+export async function generateMetadata({ params, searchParams }, parent) {
+  // Get the current pathname from the URL
+  const pathname = params?.slug ? `/${params.slug}` : '/';
+  const seoData = seoConfig[pathname] || seoConfig.default;
+
+  return {
+    title: seoData.title,
+    description: seoData.description,
+    keywords: seoData.keywords,
+    openGraph: {
+      title: seoData.title,
+      description: seoData.description,
+      images: [seoData.ogImage],
+    },
+  };
+}
 
 export default function RootLayout({ children }) {
   return (
