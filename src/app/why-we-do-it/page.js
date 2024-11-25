@@ -14,35 +14,37 @@ const WhyWeDoItPage = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-        }}
-      >
+        }}>
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{
-            fontWeight: "bold",
+            fontWeight: "900",
+            textAlign: "center",
+            px: 2,
+            color: "#007CC2",
+          }} >
+          WHY WE DO IT
+        </Typography>
+        <Typography 
+          sx={{
+            fontWeight: "700",
             textAlign: "center",
             px: 2,
             color: "#333",
-            border: "1px solid red",
-          }} >
-          Why We Do It
+          }}>
+          Inspiring Hope, Igniting Potential
         </Typography>
-        <Typography variant="body1" sx={{ lineHeight: 1.8, color: "#555" }}>
-            Mpumeleolo Caring for Boys and Girls Foundation, also known as “Caring,” exists
-            to provide opportunities for every child, regardless of their background. By
-            breaking the cycle of poverty and inequality, we empower boys and girls to
-            reach their full potential. Our foundation believes that every child deserves
-            access to education, mentorship, and resources that nurture their well-being
-            and promote a brighter future.
-        </Typography>
-        <Typography variant="body1" sx={{ lineHeight: 1.8, color: "#555", mt: 3 }}>
-            With the help of volunteers, staff, and partnerships with communities, we are
-            dedicated to fostering a safe, supportive environment where children thrive.
-            Together, we aim to ensure their emotional, physical, and psychological well-being.
-            Through this collective effort, we are building a generation of confident,
-            self-sufficient young individuals who can contribute meaningfully to society.
+        <Typography 
+          sx={{
+            fontWeight: "600",
+            textAlign: "center",
+            px: 2,
+            color: "#333",
+          }}>
+          Our mission begins with the belief that every child deserves a chance to dream, grow, and thrive.
         </Typography>
       </Box>
 
@@ -70,23 +72,51 @@ const WhyWeDoItPage = () => {
 
             {/* Right side (Text content) */}
             <Grid item xs={12} md={6}>
-            <Typography
-                variant="h4"
-                component="h2"
-                sx={{
-                fontWeight: "bold",
-                color: "#f4b400", // Accent color
-                marginBottom: "1rem",
-                }}>
-                Breaking Barriers, Building Futures
-            </Typography>
+              <Typography
+                  component="h2"
+                  sx={{
+                  fontWeight: "bold",
+                  color: "#f4b400", // Accent color
+                  marginBottom: "1rem",
+                  }}>
+                  WE AT MPUMELELO CARING FOR BOYS AND GIRLS FOUNDATION ARE DETERMINED:
+              </Typography>
+              <Typography variant="body1" paragraph>
+                To break down barriers that limit the potential of children and youth, enabling them to thrive despite the challenges of poverty and inequality.
+                To reaffirm the belief that every child has immense value, strength, and the right to pursue their dreams without socio-economic constraints.
+                To provide the care, support, and resources required to empower boys and girls to overcome obstacles and realize their fullest potential.
+                To nurture resilience and confidence through programs that address physical, emotional, educational, and psychological needs.
+                To foster a future where all children grow into empowered, self-sufficient individuals who positively impact their communities and the world.
+              </Typography>
+              
+              <Typography
+                  component="h2"
+                  sx={{
+                  fontWeight: "bold",
+                  color: "#f4b400", // Accent color
+                  marginBottom: "1rem",
+                  }}>
+                  AND FOR THESE ENDS:
+              </Typography>
+              <Typography variant="body1" paragraph>
+                To partner with communities, schools, and health organizations to deliver tailored programs that meet diverse needs.
+                To create safe, nurturing spaces where children experience hope, dignity, and opportunity.
+                To unite our strength with the support of volunteers, staff, and partners who share our vision of an equitable future for all children.
+                To establish and strengthen networks of mentorship and community support, providing essential resources to help children rise above their circumstances.
+              </Typography>
 
-            <Typography variant="body1" paragraph>
-                At Mpumeleolo Caring for Boys and Girls Foundation (also known as “Caring”), we believe in the incredible potential within every child. Too many young people face barriers that limit their dreams and potential simply because of circumstances beyond their control. Our foundation exists to break these barriers by providing each child with the support, care, and resources they need to thrive.
-            </Typography>
-            <Typography variant="body1" paragraph>
-                We understand that poverty and inequality can create insurmountable obstacles, but we also believe that these obstacles can be dismantled. At Caring, we are committed to building a world where every boy and girl has the opportunity to pursue their dreams without the constraints of socio-economic limitations.
-            </Typography>
+              <Typography
+                  component="h2"
+                  sx={{
+                  fontWeight: "bold",
+                  color: "#f4b400", // Accent color
+                  marginBottom: "1rem",
+                  }}>
+                  WE ARE RESOLVED TO COMBINE OUR EFFORTS TO ACCOMPLISH THESE AIMS.  
+              </Typography>
+              <Typography variant="body1" paragraph>
+                With the unwavering commitment of our team and supporters, we invest in the well-being of boys and girls today, shaping a brighter tomorrow. Together, we aim to dismantle the barriers of inequality and build a world where every child can grow and thrive.
+              </Typography>
 
             <Box sx={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
                 <Button
@@ -107,8 +137,8 @@ const WhyWeDoItPage = () => {
       </Box>
 
       {/* Content Section */}
-      <Box sx={{ px: { xs: 2, sm: 4, md: 10 }, py: 6 }}>
-        <Grid container spacing={4}>
+      <Box sx={{pt: 0.2, pb:0.4 }}>
+        <Grid >
           {/* <Grid item xs={12} md={8}>
             <Typography
               variant="h4"
@@ -144,7 +174,7 @@ const WhyWeDoItPage = () => {
             </Button>
           </Grid> */}
           <Grid item xs={12} md={4}>
-            <Card >
+            <Card sx={{ display: "flex" }}>
               <CardMedia
                 component="img"
                 height="200"
