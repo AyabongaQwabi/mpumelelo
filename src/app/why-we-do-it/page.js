@@ -236,8 +236,13 @@ const WhyWeDoItPage = () => {
               <CardMedia
                 component="img"
                 height="200"
-                image="/images/hero1.jpg"
+                image="/images/image22.jpg"
                 alt="Our Mission"
+                sx={{ 
+                  height: 200,
+                  objectFit: "cover",
+                  objectPosition: "center"
+                }}
               />
             </Card>
           </Grid>
@@ -272,20 +277,16 @@ const WhyWeDoItPage = () => {
         </Typography>
         <Box sx={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
         <Link href="/who-we-are" style={{ textDecoration: 'none' }}>
-          <Button
-              variant="contained"
-              color="warning"
-              sx={{ fontWeight: "bold", textTransform: "none" }}>
-            Learn More
-          </Button>
+          <Box
+              sx={{ fontWeight: "bold", textTransform: "none", background: "#007cc2", p:1 }}>
+              Learn More
+          </Box>
         </Link>
         <Link href="/donate" style={{ textDecoration: 'none' }}>
-          <Button
-              variant="outlined"
-              color="warning"
-              sx={{ fontWeight: "bold", textTransform: "none", color: "#333" }}>
+          <Box
+              sx={{ fontWeight: "bold", textTransform: "none", color: "#333",  p:1, border: "1px solid #333" }}>
               Get Involved
-          </Button>
+          </Box>
         </Link>
         </Box>
 
