@@ -10,7 +10,6 @@ export default function About() {
   return (
     <>
     <AcknowledgementCard />
-    <Footer />
     </>
   );
 }
