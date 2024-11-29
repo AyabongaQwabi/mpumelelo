@@ -73,7 +73,7 @@ export default function About() {
       <Box
         sx={{ 
           margin: 'auto',
-          py: 4,
+          py: 8,
         }}>
         <Typography
           variant='h2'

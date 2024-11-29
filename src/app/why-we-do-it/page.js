@@ -1,7 +1,7 @@
 'use client';
 import React from "react";
 import Link from 'next/link';
-import { Divider, Box, Typography, Grid, Button, Card, CardContent, CardMedia, List, ListItem, ListItemText } from "@mui/material";
+import { Divider, Box, Typography, Grid, Button, Card, CardContent, CardMedia, List, ListItem, ListItemText, SvgIcon } from "@mui/material";
 
 const WhyWeDoItPage = () => {
   return (
@@ -22,17 +22,17 @@ const WhyWeDoItPage = () => {
         <Typography
           variant="h4"
           sx={{
-            fontWeight: "950",
             textAlign: "center",
             px: 2,
-            color: "#007CC2",
+            fontSize: '32px',
+            color: '#00B5E2',
           }} >
           WHY WE DO IT
         </Typography>
         <Typography 
           sx={{
             fontSize: "22px",
-            fontWeight: "700",
+            fontWeight: "600",
             textAlign: "center",
             px: 2,
             mt: 2,
@@ -42,7 +42,8 @@ const WhyWeDoItPage = () => {
         </Typography>
         <Typography 
           sx={{
-            fontWeight: "500",
+            fontWeight: "300",
+            fontSize: "18px",
             textAlign: "center",
             px: 2,
             mt: 1,
@@ -57,8 +58,8 @@ const WhyWeDoItPage = () => {
         sx={{
           backgroundColor: "#5D5D5D",
           color: "white",
-          padding: "4rem 2rem",
           pl: {xs: "0", md: "100px"},
+          py: {xs: "50px", md: "50px"},
         }}>
         <Box 
           container 
@@ -67,14 +68,13 @@ const WhyWeDoItPage = () => {
             display: "flex",
             flexDirection: { xs: 'column', md: 'row' },
             width: { xs: "100%", sm: "85%" },
-            margin: "0 auto"
+            margin: "0 auto",
           }}>
            
           {/* Left side (Image placeholder) */}
           <Box
               sx={{
               width: {xs: "100%", md:"50%"},
-              // height: {xs: "100%", md:"50%"},
               display: "flex",
               flexDirection: "column",
               alignItems: { xs: "center", md:"end"},
@@ -87,15 +87,21 @@ const WhyWeDoItPage = () => {
                   sm: "30px"  // screens larger than mobile
                 },
                 width: "100%",
-                pl: { xs: 1, md: 2 },
-                fontWeight: "900",
+                pl: { xs: 4, md: 2 },
+                fontWeight: "400",
                 color: "white", // Accent color
                 marginBottom: "5px",
               }}>
               MPUMELELO FOUNDATION
             </Typography>
               {/* Image Grid */}
-              <Box sx={{ display: "flex", justifyContent: "center", width: "100%", padding: { xs: "0", md: "10px" }}}>
+              <Box 
+                sx={{ 
+                  display: "flex", 
+                  justifyContent: "center", 
+                  width: "100%", 
+                  padding: { xs: "0", md: "10px",
+                  }}}>
                 <Grid container spacing={2} sx={{ width: "100%" }}>
                   {/* First column */}
                   <Grid item xs={12} md={6}>
@@ -154,12 +160,12 @@ const WhyWeDoItPage = () => {
               }}>
             <Typography
                 sx={{
-                  fontSize: {xs: "16px", md: "18px"},
-                  fontWeight: "bold",
+                  fontSize: {xs: "16px", md: "20px"},
+                  fontWeight: "medium",
                   marginTop: "5px",
                   color: "#f4b400"
                 }}>
-                AT MPUMELELO, WE ARE COMMITTED.
+                AT MPUMELELO, WE ARE COMMITTED:
             </Typography>
             <List 
               sx={{ 
@@ -186,8 +192,8 @@ const WhyWeDoItPage = () => {
             
             <Typography
                 sx={{
-                  fontSize: {xs: "16px", md: "18px"},
-                  fontWeight: "bold",
+                  fontSize: {xs: "16px", md: "20px"},
+                  fontWeight: "medium",
                   color: "#f4b400", // Accent color
                 }}>
                 AND FOR THESE ENDS:
@@ -219,13 +225,40 @@ const WhyWeDoItPage = () => {
       <Box sx={{pt: 0.2, pb:0.4 }}>
         <Grid >
           <Grid item xs={12} md={4}>
-            <Card sx={{ display: "flex", flexDirection: {xs:"column", sm:"row" }, justifyItems: "center", alignItems: "center", height: "100%", backgroundColor: '#007cc2', color: 'white' }}>
-              <CardContent sx={{ backgroundColor: '#007cc2', color: 'white' }}>
-                <Box sx={{ width: "90%", margin: "auto" }}>
-                  <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
-                    Our Mission
+            <Card 
+              sx={{ 
+                display: "flex", 
+                flexDirection: {xs:"column", sm:"row" }, 
+                justifyItems: "center", 
+                alignItems: "center", 
+                height: "100%", 
+                backgroundColor: '#02b5e2', 
+                color: 'white' 
+                }}>
+              <CardContent 
+                sx={{ 
+                  color: 'white',
+                  // py: 4,
+                  }}>
+                <Box 
+                  sx={{ 
+                    width: "90%", 
+                    margin: "auto",
+                    py: { xs: 3, md: 0 }
+                    }}>
+                  <Typography variant="h5" 
+                    sx={{ 
+                      fontSize: "32px",
+                      mb: 2,
+                      }}>
+                    OUR MISSION
                   </Typography>
-                  <Typography variant="body2" sx={{ lineHeight: 1.6, color: "white", fontSize: {xs: "14px", md: "16px"} }}>
+                  <Typography variant="body2" 
+                    sx={{ 
+                      lineHeight: 1.6, 
+                      color: "white", 
+                      fontSize: {xs: "17px", md: "18px"} 
+                      }}>
                     To provide holistic care and education, while ensuring the emotional and
                     physical well-being of children. We strive to foster equality, dignity,
                     and opportunities, empowering the next generation to be self-sufficient
@@ -235,11 +268,11 @@ const WhyWeDoItPage = () => {
               </CardContent>
               <CardMedia
                 component="img"
-                height="200"
+                // height="200"
                 image="/images/image22.jpg"
                 alt="Our Mission"
                 sx={{ 
-                  height: 200,
+                  height: 250,
                   objectFit: "cover",
                   objectPosition: "center"
                 }}
@@ -275,19 +308,67 @@ const WhyWeDoItPage = () => {
         <Typography variant="body1" sx={{ color: "#333" }}>
           With the unwavering commitment of our team and supporters, we invest in the well-being of boys and girls today, shaping a brighter tomorrow. Together, we aim to dismantle the barriers of inequality and build a world where every child can grow and thrive.
         </Typography>
-        <Box sx={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
-        <Link href="/who-we-are" style={{ textDecoration: 'none' }}>
-          <Box
-              sx={{ fontWeight: "bold", textTransform: "none", background: "#007cc2", p:1 }}>
+        {/* Buttons  */}
+        <Box 
+          sx={{ 
+            display: "flex", 
+            gap: {xs: "16px", md: "30px"}, 
+            marginTop: "2rem",
+            }}>
+          <Button
+            variant='outlined'
+            color='inherit'
+            size='large'
+            sx={{
+              borderRadius: 0,
+              px: { xs: 2, lg: 4 },
+              py: 2,
+              textTransform: 'none',
+              color: '#02b5e2',
+              borderColor: '#02b5e2',
+            }}
+            href='/who-we-are'
+            endIcon={
+              <SvgIcon>
+                <path
+                  fill='none'
+                  stroke='currentColor'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M5 12h14m-4 4l4-4m-4-4l4 4'
+                />
+              </SvgIcon>
+            }>
               Learn More
-          </Box>
-        </Link>
-        <Link href="/donate" style={{ textDecoration: 'none' }}>
-          <Box
-              sx={{ fontWeight: "bold", textTransform: "none", color: "#333",  p:1, border: "1px solid #333" }}>
+          </Button>
+          <Button
+            variant='outlined'
+            color='inherit'
+            size='large'
+            sx={{
+              borderRadius: 0,
+              px: { xs: 2, lg: 4 },
+              py: 2,
+              textTransform: 'none',
+              color: 'white',
+              backgroundColor: '#02b5e2',
+            }}
+            href='/donate'
+            endIcon={
+              <SvgIcon >
+                <path
+                  fill='none'
+                  stroke='currentColor'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M5 12h14m-4 4l4-4m-4-4l4 4'
+                />
+              </SvgIcon>
+            }>
               Get Involved
-          </Box>
-        </Link>
+          </Button>
         </Box>
 
         <Divider sx={{ 
@@ -299,6 +380,7 @@ const WhyWeDoItPage = () => {
         }} />
 
       </Box>
+      
     </Box>
   );
 };
