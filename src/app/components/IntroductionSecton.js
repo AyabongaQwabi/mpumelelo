@@ -123,7 +123,7 @@ export default function IntroductionSection() {
                     color: '#02b5e2',
                     borderColor: '#02b5e2',
                   }}
-                  href='/about'
+                  href='/who-we-are'
                   endIcon={
                     <SvgIcon>
                       <path
@@ -157,7 +157,6 @@ export default function IntroductionSection() {
                 }}
               >
                 WHY WE DO IT
-                {/* <Box component="span" sx={{ color: '#1976D2' }}> US</Box> */}
               </Typography>
               <Typography
                 variant='body1'
@@ -198,7 +197,7 @@ export default function IntroductionSection() {
                     color: '#02b5e2',
                     borderColor: '#02b5e2',
                   }}
-                  href='/about'
+                  href='/why-we-do-it'
                   endIcon={
                     <SvgIcon>
                       <path
