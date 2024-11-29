@@ -92,11 +92,10 @@ export default function IntroductionSection() {
                 sx={{
                   mb: 2,
                   mx: 'auto',
-                  color: '#333333',
+                  color: '#333',
                   px: { md: 4 },
                   fontSize: '1.2rem',
-                }}
-              >
+                }}>
                 Welcome to Mpumeleolo Caring for Boys and Girls Foundation, also
                 known as “Caring,” an organization founded on the belief that
                 every child deserves equal opportunities. We are committed to
@@ -167,7 +166,7 @@ export default function IntroductionSection() {
                 sx={{
                   mb: 2,
                   mx: 'auto',
-                  color: '#33333',
+                  color: '#333',
                   px: { md: 4, sm: 2 },
                   fontSize: '1.2rem',
                 }}
