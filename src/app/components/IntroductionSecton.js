@@ -254,8 +254,7 @@ export default function IntroductionSection() {
             justifyContent: 'center',
             mt: 3,
             px: { md: 6 },
-          }}
-        >
+          }}>
           <Grid container sx={{ width: { xs: 'auto', md: '100%' } }}>
             {sections.map((section, index) => (
               <Grid item xs={12} key={index}>
@@ -311,21 +310,24 @@ export default function IntroductionSection() {
                           flexDirection: 'column',
                           justifyContent: 'center',
                           px: 6,
-                        }}
-                      >
+                        }}>
                         <Typography
                           variant='h5'
                           component='h2'
                           fontWeight='medium'
-                          sx={{ fontSize: '32px', mb: 1 }}
-                        >
+                          sx={{ 
+                            fontSize: '32px', 
+                            mb: 1,
+                            }}>
                           {section.title}
                         </Typography>
                         <Typography
                           variant='body2'
                           fontWeight='medium'
-                          sx={{ mb: 2, fontSize: '18px' }}
-                        >
+                          sx={{ 
+                            mb: 2, 
+                            fontSize: '18px' 
+                            }}>
                           {section.description}
                         </Typography>
                       </CardContent>

@@ -20,8 +20,8 @@ export default function About() {
   const sections = [
     { 
       title: 'OUR VISION', 
-      description: 'To empower every child, regardless of gender or background, to achieve their full potential by ensuring access to essential resources, education, and support for a brighter future.',
-      imgSrc: '/images/hero2.jpg', // Replace with correct image URL
+      description: 'To empower every child, regardless of gender or background, to achieve their full potential by ensuring access to essential resources, education, and support for a brighter future, while fostering an environment that nurtures their unique talents and ambitions.',
+      imgSrc: '/images/hero2.jpg',
       linkText: 'More about our mission and history',
       linkUrl: '#'
     },
@@ -94,7 +94,7 @@ export default function About() {
             align='center'
             fontWeight='medium'
             sx={{
-              width: '70%',
+              width: {xs: '90%', md:'70%'},
               mb: 2,
               mx: 'auto',
               color: '#333333',
@@ -112,7 +112,7 @@ export default function About() {
               align='center'
               fontWeight='medium'
               sx={{
-                width: '70%',
+                width: {xs: '90%', md:'70%'},
                 mb: 2,
                 mx: 'auto',
                 color: '#333333',
@@ -129,7 +129,7 @@ export default function About() {
               align='center'
               fontWeight='medium'
                 sx={{
-                  width: '70%',
+                  width: {xs: '90%', md:'70%'},
                   mb: 2,
                   mx: 'auto',
                   color: '#333333',
@@ -148,6 +148,7 @@ export default function About() {
         </Box>
       </Box>
     </Box>
+
     {/* Grid of content and Images */}
     <Box 
       sx={{ 
@@ -155,8 +156,11 @@ export default function About() {
         justifyContent: 'center',
         px: { md: 6 }
         }}>
-        {/* Grid for sections */}
-        <Grid container sx={{ width: { xs: 'auto', md: '100%' } }}>
+        Grid for sections
+        <Grid container 
+          sx={{ 
+            width: { xs: 'auto', md: '100%' } 
+            }}>
           {sections.map((section, index) => (
             <Grid item xs={12} key={index}>
               <Card 
@@ -199,18 +203,18 @@ export default function About() {
                     </Box>
                     <CardContent 
                       sx={{ 
-                        width: { xs: '100%', md: '50%' }, 
-                        backgroundColor: "#00B5E2", 
-                        color: 'white', 
-                        display: 'flex', 
-                        flexDirection: 'column', 
-                        justifyContent: 'center', 
-                        px: 6 
+                        width: { xs: '100%', md: '50%' },
+                        backgroundColor: '#00B5E2',
+                        color: 'white',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        px: 6,
                         }}>
                       <Typography variant="h5" component="h2" 
                       sx={{ 
-                        fontWeight: '950',
-                        mb: 1 
+                        fontSize: '32px', 
+                        mb: 1,
                         }}>
                         {section.title}
                       </Typography>
@@ -227,18 +231,18 @@ export default function About() {
                   <>
                     <CardContent 
                     sx={{ 
-                      width: { xs: '100%', md: '50%' }, 
-                      backgroundColor: "#00B5E2", 
-                      color: 'white', 
-                      display: 'flex', 
-                      flexDirection: 'column', 
-                      justifyContent: 'center', 
-                      px: 6 
+                      width: { xs: '100%', md: '50%' },
+                      backgroundColor: '#00B5E2',
+                      color: 'white',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      px: 6,
                       }}>
                       <Typography variant="h5" component="h2" 
                       sx={{ 
-                        fontWeight: '950', 
-                        mb: 1 
+                        fontSize: '32px', 
+                        mb: 1,
                         }}>
                         {section.title}
                       </Typography>
@@ -279,21 +283,21 @@ export default function About() {
     sx={{ 
       width: '100%', 
       backgroundColor: 'white', 
-      pb: 30, 
-      pt: { xs: 15, sm: 25 }, 
+      pb: { xs: 10, sm: 25 },
+      pt: { xs: 1, sm: 25 }, 
       display: 'flex', 
       flexDirection: 'column', 
       alignItems: 'center'
       }}>
       <Box 
-      sx={{ 
-        width: '100%', 
-        display: 'flex', 
-        justifyContent: 'center', 
-        background: '#353535', 
-        opacity: '0.8', 
-        py: 3, 
-        flexDirection: { xs: 'column', sm: 'column', md: 'row' 
+        sx={{ 
+          width: '100%', 
+          display: 'flex', 
+          justifyContent: 'center', 
+          background: '#353535', 
+          opacity: '0.8', 
+          py: 3, 
+          flexDirection: { xs: 'column', sm: 'column', md: 'row' 
         }}}>
         <Container 
         sx={{ 
@@ -362,7 +366,7 @@ export default function About() {
             <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls={`panel${index + 1}-content`} id={`panel${index + 1}-header`}>
               <Typography fontWeight="bold" 
               sx={{ 
-                fontSize: { xs: '15px', sm: '20px' } 
+                fontSize: { xs: '14px', sm: '16px' } 
                 }}>
                 {item.question}
               </Typography>
