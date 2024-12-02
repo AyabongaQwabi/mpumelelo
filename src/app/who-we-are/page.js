@@ -156,7 +156,7 @@ export default function About() {
         justifyContent: 'center',
         px: { md: 6 }
         }}>
-        Grid for sections
+        {/* Grid for sections */}
         <Grid container 
           sx={{ 
             width: { xs: 'auto', md: '100%' } 
@@ -294,34 +294,35 @@ export default function About() {
           width: '100%', 
           display: 'flex', 
           justifyContent: 'center', 
+          alignItems: 'center',
+          flexDirection: { xs: 'column', sm: 'column', md: 'row',
           background: '#353535', 
           opacity: '0.8', 
           py: 3, 
-          flexDirection: { xs: 'column', sm: 'column', md: 'row' 
         }}}>
         <Container 
         sx={{ 
-          width: { xs: '60%', sm: '40%'} 
+          width:'100%',
           }}>
           <Typography variant="h4" component="h1" gutterBottom color="white" fontWeight="950" 
           sx={{ 
             display: 'flex', 
-            justifyContent: 'end', 
+            justifyContent: {xs: 'center', md:'end'}, 
             alignItems: 'center', 
             height: '100%', 
             width: '100%', 
-            py: 5 
+            pt: 3,
             }}>
             ACTIVITIES
           </Typography>
         </Container>
         <Container 
-        sx={{ 
-          xs: '100%', 
-          sm: '60%', 
-          py: 5, 
-          textAlign: {xs: 'center', sm: 'center', md: 'start'}
-          }}>
+          sx={{ 
+            width:'100%',
+            py: { xs: 0, md: 3 },
+            pb: { xs: 3 },
+            textAlign: {xs: 'center', sm: 'center', md: 'start'},
+            }}>
           <Typography variant="body1" color="white" maxWidth="md" 
           sx={{ 
             fontSize: { xs: '16px', sm: '18px'} 
@@ -366,7 +367,7 @@ export default function About() {
             <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls={`panel${index + 1}-content`} id={`panel${index + 1}-header`}>
               <Typography fontWeight="bold" 
               sx={{ 
-                fontSize: { xs: '14px', sm: '16px' } 
+                fontSize: { xs: '12px', sm: '14px' } 
                 }}>
                 {item.question}
               </Typography>
