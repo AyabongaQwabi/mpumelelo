@@ -326,8 +326,8 @@ export default function About() {
             textAlign: {xs: 'center', sm: 'center', md: 'start'},
             }}>
           <Typography variant="body1" color="white" maxWidth="md" 
-          sx={{ 
-            fontSize: { xs: '14px', sm: '16px'} 
+            sx={{ 
+              fontSize: { xs: '14px', sm: '16px'}
             }}>
             In a bid to address the immediate needs of the boys and girls in rural areas.
           </Typography>

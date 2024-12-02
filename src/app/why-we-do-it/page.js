@@ -10,7 +10,7 @@ const WhyWeDoItPage = () => {
       <Box
         sx={{
           position: "relative",
-          height: "300px",
+          // height: "395px",
           backgroundImage: `url('/images/banner.jpg')`, // Replace with your banner image
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -20,14 +20,14 @@ const WhyWeDoItPage = () => {
           justifyContent: "center",
         }}>
         <Typography
-          variant="h4"
-          sx={{
-            textAlign: "center",
-            px: 2,
-            fontSize: '32px',
-            color: '#00B5E2',
-          }} >
-          WHY WE DO IT
+        variant="h4"
+        sx={{
+          textAlign: "center",
+          pt: 12,
+          fontSize: '32px',
+          color: '#00B5E2',
+        }} >
+        WHY WE DO IT
         </Typography>
         <Typography 
           sx={{
@@ -35,7 +35,7 @@ const WhyWeDoItPage = () => {
             fontWeight: "600",
             textAlign: "center",
             px: 2,
-            mt: 2,
+            pt: 3,
             color: "#333",
           }}>
           Inspiring Hope, Igniting Potential
@@ -46,6 +46,7 @@ const WhyWeDoItPage = () => {
             fontSize: "18px",
             textAlign: "center",
             px: 2,
+            pb: { xs:16, md:20 },
             mt: 1,
             color: "#333",
           }}>
