@@ -304,11 +304,13 @@ export default function About() {
         sx={{ 
           width:'100%',
           }}>
-          <Typography variant="h4" component="h1" gutterBottom color="white" fontWeight="950" 
+          <Typography gutterBottom color="white" 
           sx={{ 
             display: 'flex', 
             justifyContent: {xs: 'center', md:'end'}, 
-            alignItems: 'center', 
+            alignItems: 'center',
+            fontSize: { xs: '20px', sm: '24px', md: '28px' },
+            fontWeight: '900',
             height: '100%', 
             width: '100%', 
             pt: 3,
@@ -325,7 +327,7 @@ export default function About() {
             }}>
           <Typography variant="body1" color="white" maxWidth="md" 
           sx={{ 
-            fontSize: { xs: '16px', sm: '18px'} 
+            fontSize: { xs: '14px', sm: '16px'} 
             }}>
             In a bid to address the immediate needs of the boys and girls in rural areas.
           </Typography>
@@ -336,7 +338,7 @@ export default function About() {
             }}>
             <Divider 
             sx={{ 
-              my: 2, 
+              my: 1, 
               backgroundColor: 'rgba(25, 118, 210)', 
               height: '1px', 
               width: { xs: '60%', sm: '20%'} 
@@ -344,7 +346,7 @@ export default function About() {
           </Box>
           <Typography variant="body1" color="white" maxWidth="md" 
           sx={{ 
-            fontSize: { xs: '16px', sm: '18px'} 
+            fontSize: { xs: '14px', sm: '16px'} 
             }}>
             here are some of the activities we do.
           </Typography>
