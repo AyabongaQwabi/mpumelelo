@@ -81,6 +81,7 @@ export default function About() {
           fontWeight='medium'
           sx={{
             mb: 4,
+            fontWeight: "bold",
             fontSize: '32px',
             color: '#00B5E2',
             px: { md: 4, sm: 2 },

@@ -26,7 +26,8 @@ const WhyWeDoItPage = () => {
           pt: 12,
           fontSize: '32px',
           color: '#00B5E2',
-        }} >
+          fontWeight: "bold"
+        }}>
         WHY WE DO IT
         </Typography>
         <Typography 
@@ -46,7 +47,7 @@ const WhyWeDoItPage = () => {
             fontSize: "18px",
             textAlign: "center",
             px: 2,
-            pb: { xs:16, md:20 },
+            pb: { xs:16, md:17 },
             mt: 1,
             color: "#333",
           }}>
