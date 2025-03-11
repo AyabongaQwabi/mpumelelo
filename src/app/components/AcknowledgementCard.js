@@ -21,7 +21,7 @@ const AcknowledgementCard = () => {
           DONOR ACKNOWLEDGEMENT
         </Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography sx={{ width: {xs: '70%', md: '60%', lg: '50%' }, mb: 4, color: 'white', fontSize: { xs: '18px', sm: '18px', md: '20px' } }}> 
+            <Typography sx={{ width: {xs: '80%', md: '60%', lg: '50%' }, mb: 4, color: 'white', fontSize: { xs: '18px', sm: '18px', md: '20px' } }}> 
                 At our foundation, we strive to make a positive impact in the lives of those in need. 
                 Your contributions help us provide vital resources, spread hope, and empower communities. 
                 Together, we’re changing lives. We are deeply grateful for the generosity of our donors 

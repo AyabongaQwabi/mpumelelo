@@ -238,6 +238,23 @@ const Header = () => {
                   borderLeft: '8px solid white',
                 }}
                 component={Link}
+                href='/gallery'
+              >
+                <Typography variant='body2' fontWeight='medium'>
+                  Gallery
+                </Typography>
+              </MenuItem>
+
+              <MenuItem
+                sx={{
+                  width: '25%',
+                  display: { xs: 'none', sm: 'flex' },
+                  px: 3,
+                  py: 1,
+                  background: '#e0e0e0',
+                  borderLeft: '8px solid white',
+                }}
+                component={Link}
                 href='/contact-us'
               >
                 <Typography variant='body2' fontWeight='medium'>

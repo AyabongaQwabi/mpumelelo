@@ -84,7 +84,7 @@ export default function Gallery() {
           }}/>
       </Box>
       {/* Gallery Grid */}
-      <Box sx={{ maxWidth: 'xl', mx: 'auto', my: 10, px: { xs: 2, md: 4 } }}>
+      <Box sx={{ maxWidth: 'xl', mx: 'auto', my: 9, px: { xs: 2, md: 4 } }}>
         <Box sx={{ mt: 4 }}>
           <Grid container spacing={2} 
             sx={{ 

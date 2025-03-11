@@ -250,7 +250,7 @@ const WhyWeDoItPage = () => {
                     }}>
                   <Typography variant="h5" 
                     sx={{ 
-                      fontSize: "32px",
+                      fontSize: "28px",
                       mb: 2,
                       }}>
                     OUR MISSION
@@ -259,7 +259,7 @@ const WhyWeDoItPage = () => {
                     sx={{ 
                       lineHeight: 1.6, 
                       color: "white", 
-                      fontSize: {xs: "17px", md: "18px"} 
+                      fontSize: {xs: "16px", md: "17.5px"} 
                       }}>
                     To provide holistic care and education, while ensuring the emotional and
                     physical well-being of children. We strive to foster equality, dignity,
