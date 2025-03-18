@@ -1,290 +1,259 @@
-"use client"
+'use client';
 import {
   AppBar,
   Toolbar,
-  InputBase,
   Box,
   IconButton,
-  MenuItem,
-  Typography,
   Drawer,
   List,
   ListItem,
   ListItemText,
-} from "@mui/material"
-import Link from "next/link"
-import Head from "next/head"
-import { Search, Menu as MenuIcon } from "@mui/icons-material"
-import { useState } from "react"
+  Button,
+  Container,
+  useScrollTrigger,
+  Slide,
+} from '@mui/material';
+import Link from 'next/link';
+import { Menu as MenuIcon, Close } from '@mui/icons-material';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+
+function HideOnScroll(props) {
+  const { children } = props;
+  const trigger = useScrollTrigger();
+
+  return (
+    <Slide appear={false} direction='down' in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
 const Header = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   const toggleDrawer = (open) => (event) => {
-    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
-      return
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
     }
-    setDrawerOpen(open)
-  }
+    setDrawerOpen(open);
+  };
 
   const menuItems = [
-    { label: "What we do", href: "/what-we-do" },
-    { label: "Why we do it", href: "/why-we-do-it" },
-    { label: "Who we are", href: "/who-we-are" },
-    { label: "Contact us", href: "/contact-us" },
-    { label: "Blog", href: "/blog" },
-    { label: "Donate", href: "/donate" },
-  ]
+    { label: 'What We Do', href: '/what-we-do' },
+    { label: 'Why We Do It', href: '/why-we-do-it' },
+    { label: 'Who We Are', href: '/who-we-are' },
+    { label: 'Gallery', href: '/gallery' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contact Us', href: '/contact-us' },
+    { label: 'Donate', href: '/donate', highlight: true },
+  ];
+
+  const isActive = (path) => pathname === path;
 
   const renderMenu = (
-    <List>
+    <List sx={{ width: 280, pt: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 2, mb: 2 }}>
+        <IconButton onClick={toggleDrawer(false)}>
+          <Close />
+        </IconButton>
+      </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+        <Link href='/'>
+          <img
+            src='/images/logo.png'
+            alt='Mpumelelo Foundation Logo'
+            style={{ width: 180 }}
+          />
+        </Link>
+      </Box>
       {menuItems.map((item, index) => (
-        <ListItem button key={index} component={Link} href={item.href} onClick={toggleDrawer(false)}>
-          <ListItemText primary={item.label} />
+        <ListItem
+          button
+          key={index}
+          component={Link}
+          href={item.href}
+          onClick={toggleDrawer(false)}
+          sx={{
+            py: 1.5,
+            borderLeft: isActive(item.href)
+              ? '4px solid #00B5E2'
+              : '4px solid transparent',
+            backgroundColor: isActive(item.href)
+              ? 'rgba(0, 181, 226, 0.1)'
+              : 'transparent',
+            '&:hover': {
+              backgroundColor: 'rgba(0, 181, 226, 0.05)',
+            },
+          }}
+        >
+          <ListItemText
+            primary={item.label}
+            primaryTypographyProps={{
+              fontWeight: isActive(item.href) ? 'bold' : 'normal',
+              color: item.highlight ? '#00B5E2' : 'inherit',
+            }}
+          />
         </ListItem>
       ))}
     </List>
-  )
+  );
+
   return (
-    <AppBar position="relative" elevation={4} sx={{ bgcolor: "white", color: "#333" }}>
-      <Toolbar
+    <HideOnScroll>
+      <AppBar
+        position='fixed'
+        elevation={scrolled ? 4 : 0}
         sx={{
-          py: { xs: 2, lg: 3 },
-          px: { xs: 2, lg: 10 },
-          minHeight: { xs: 60, lg: 80 },
-          borderBottom: "1px solid #fff",
-          boxShadow: "none",
+          bgcolor: scrolled ? 'white' : 'rgba(255, 255, 255, 0.95)',
+          color: '#333',
+          transition: 'all 0.3s ease',
+          backdropFilter: 'blur(10px)',
         }}
       >
-        <Box
-          component="a"
-          href="/"
-          sx={{
-            flexShrink: 0,
-            width: { xs: "90%", sm: "auto" },
-            mb: { xs: 2, sm: 0 },
-          }}
-        >
-          <img src="/images/logo.png" alt="logo" style={{ width: 200 }} />
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "end",
-            width: "100%",
-            flexWrap: "wrap",
-          }}
-        >
-          <Box
+        <Container maxWidth='xl'>
+          <Toolbar
             sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "end",
-              alignItems: "center",
-              py: 1,
-              display: { xs: "none", md: "flex" },
+              py: { xs: 1, lg: 1.5 },
+              minHeight: { xs: 70, lg: 80 },
+              display: 'flex',
+              justifyContent: 'space-between',
             }}
           >
+            {/* Logo */}
             <Box
+              component={Link}
+              href='/'
               sx={{
-                display: "flex",
-                width: "50%",
-                alignItems: "center",
-                display: { xs: "none", md: "flex" },
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
-              <InputBase
-                placeholder="Search something..."
-                sx={{
-                  bgcolor: "#fff",
-                  px: 2,
-                  width: "50%",
-                  transition: "background-color 0.3s ease",
-                  "&:focus-within": { bgcolor: "transparent" },
-                  borderLeft: "8px solid white",
-                }}
-                startAdornment={<Search sx={{ mr: 1, color: "#333" }} />}
+              <img
+                src='/images/logo.png'
+                alt='Mpumelelo Foundation Logo'
+                style={{ width: 180 }}
               />
-              <MenuItem
-                sx={{
-                  width: "25%",
-                  display: { xs: "none", sm: "flex" },
-                  px: 3,
-                  py: 1,
-                  background: "#e0e0e0",
-                  borderLeft: "8px solid white",
-                }}
-                component={Link}
-                href="/blog"
-              >
-                <Typography variant="body2" fontWeight="medium">
-                  Blog
-                </Typography>
-              </MenuItem>
-
-              <MenuItem
-                sx={{
-                  width: "25%",
-                  display: { xs: "none", sm: "flex" },
-                  px: 3,
-                  py: 1,
-                  background: "#00B5E2",
-                  color: "white",
-                  borderLeft: "8px solid white",
-                }}
-                component={Link}
-                href="/donate"
-              >
-                <Typography variant="body2" fontWeight="medium">
-                  Donate
-                </Typography>
-              </MenuItem>
             </Box>
-          </Box>
 
-          <Box
-            sx={{
-              width: "100%",
-              ml: "auto",
-              mt: { xs: 2, lg: 0 },
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "end",
-              display: { xs: "none", md: "flex" },
-            }}
-          >
+            {/* Desktop Navigation */}
             <Box
               sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "50%",
+                display: { xs: 'none', md: 'flex' },
+                alignItems: 'center',
+                gap: 1,
               }}
             >
-              <MenuItem
-                sx={{
-                  width: "25%",
-                  display: { xs: "none", sm: "flex" },
-                  px: 3,
-                  py: 1,
-                  background: "#e0e0e0",
-                }}
-                component={Link}
-                href="/what-we-do"
-              >
-                <Typography variant="body2" fontWeight="medium">
-                  What we do
-                </Typography>
-              </MenuItem>
-
-              <MenuItem
-                sx={{
-                  width: "25%",
-                  display: { xs: "none", sm: "flex" },
-                  px: 3,
-                  py: 1,
-                  background: "#e0e0e0",
-                  borderLeft: "8px solid white",
-                }}
-                component={Link}
-                href="/why-we-do-it"
-              >
-                <Typography variant="body2" fontWeight="medium">
-                  Why we do it
-                </Typography>
-              </MenuItem>
-
-              <MenuItem
-                sx={{
-                  width: "25%",
-                  display: { xs: "none", sm: "flex" },
-                  px: 3,
-                  py: 1,
-                  background: "#e0e0e0",
-                  borderLeft: "8px solid white",
-                }}
-                component={Link}
-                href="/who-we-are"
-              >
-                <Typography variant="body2" fontWeight="medium">
-                  Who we are
-                </Typography>
-              </MenuItem>
-
-              <MenuItem
-                sx={{
-                  width: "25%",
-                  display: { xs: "none", sm: "flex" },
-                  px: 3,
-                  py: 1,
-                  background: "#e0e0e0",
-                  borderLeft: "8px solid white",
-                }}
-                component={Link}
-                href="/gallery"
-              >
-                <Typography variant="body2" fontWeight="medium">
-                  Gallery
-                </Typography>
-              </MenuItem>
-
-              <MenuItem
-                sx={{
-                  width: "25%",
-                  display: { xs: "none", sm: "flex" },
-                  px: 3,
-                  py: 1,
-                  background: "#e0e0e0",
-                  borderLeft: "8px solid white",
-                }}
-                component={Link}
-                href="/contact-us"
-              >
-                <Typography variant="body2" fontWeight="medium">
-                  Contact us
-                </Typography>
-              </MenuItem>
+              {menuItems.map((item, index) =>
+                item.highlight ? (
+                  <Button
+                    key={index}
+                    component={Link}
+                    href={item.href}
+                    variant='contained'
+                    sx={{
+                      ml: 1,
+                      backgroundColor: '#00B5E2',
+                      color: 'white',
+                      '&:hover': {
+                        backgroundColor: '#0088a9',
+                      },
+                      borderRadius: 0,
+                      px: 3,
+                      py: 1,
+                      textTransform: 'none',
+                      fontWeight: 500,
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                ) : (
+                  <Button
+                    key={index}
+                    component={Link}
+                    href={item.href}
+                    sx={{
+                      color: isActive(item.href) ? '#00B5E2' : '#333',
+                      fontWeight: isActive(item.href) ? 'bold' : 'normal',
+                      position: 'relative',
+                      textTransform: 'none',
+                      mx: 0.5,
+                      '&:after': {
+                        content: '""',
+                        position: 'absolute',
+                        width: isActive(item.href) ? '100%' : '0%',
+                        height: '2px',
+                        bottom: 0,
+                        left: 0,
+                        backgroundColor: '#00B5E2',
+                        transition: 'width 0.3s ease',
+                      },
+                      '&:hover': {
+                        backgroundColor: 'transparent',
+                        '&:after': {
+                          width: '100%',
+                        },
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                )
+              )}
             </Box>
-          </Box>
-          {/* Burger Menu for Mobile/Tablet */}
-          <IconButton
-            color="inherit"
-            edge="end"
-            sx={{ display: { xs: "block", md: "none" } }}
-            onClick={toggleDrawer(true)}
-          >
-            <MenuIcon />
-          </IconButton>
 
-          <Drawer
-            anchor="right"
-            open={drawerOpen}
-            onClose={toggleDrawer(false)}
-            sx={{
-              "& .MuiDrawer-paper": {
-                width: 250, // Adjust width here to make the drawer wider
-              },
-            }}
-          >
-            {renderMenu}
-          </Drawer>
-        </Box>
-      </Toolbar>
-    </AppBar>
-  )
-}
+            {/* Mobile Menu Button */}
+            <IconButton
+              color='inherit'
+              edge='end'
+              sx={{ display: { xs: 'block', md: 'none' } }}
+              onClick={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+
+            {/* Mobile Drawer */}
+            <Drawer
+              anchor='right'
+              open={drawerOpen}
+              onClose={toggleDrawer(false)}
+            >
+              {renderMenu}
+            </Drawer>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </HideOnScroll>
+  );
+};
 
 const NavBar = () => {
   return (
     <>
-      <Head>
-        <title>Mpumelelo Foundation - Empowering Change</title>
-      </Head>
       <Header />
+      <Box sx={{ height: { xs: 70, lg: 80 } }} />{' '}
+      {/* Spacer for fixed header */}
     </>
-  )
-}
+  );
+};
 
-export default NavBar
-
+export default NavBar;

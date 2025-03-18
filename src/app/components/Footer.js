@@ -1,195 +1,274 @@
-import { Container, Grid, Typography, Box, Link, Divider } from "@mui/material"
-import { Facebook, Instagram, LinkedIn, Twitter } from "@mui/icons-material"
-import Image from "next/image"
+import {
+  Container,
+  Grid,
+  Typography,
+  Box,
+  Link,
+  Divider,
+  IconButton,
+  TextField,
+  Button,
+} from '@mui/material';
+import {
+  Facebook,
+  Instagram,
+  LinkedIn,
+  Twitter,
+  Send,
+  LocationOn,
+  Phone,
+  Email,
+} from '@mui/icons-material';
+import Image from 'next/image';
+
 const Footer = () => {
   return (
     <Box
-      component="footer"
+      component='footer'
       sx={{
-        backgroundColor: "#fff",
-        color: "#333333",
-        py: 4,
+        backgroundColor: '#fff',
+        color: '#333333',
+        pt: 8,
+        pb: 4,
         fontFamily: '"Roboto", "Montserrat", sans-serif',
+        borderTop: '1px solid #f0f0f0',
       }}
     >
       {/* Footer Links and Information */}
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
-        <Grid container spacing={4} sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Container maxWidth='lg'>
+        <Grid container spacing={6}>
           {/* About Section */}
           <Grid item xs={12} md={4}>
-            <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
-              <Image src="/images/logo.png" width={274} height={101} alt="MPUMELELO FOUNDATION LOGO" />
-            </Typography>
+            <Box sx={{ mb: 3 }}>
+              <Image
+                src='/images/logo.png'
+                width={200}
+                height={74}
+                alt='MPUMELELO FOUNDATION LOGO'
+              />
+            </Box>
             <Typography
-              variant="body1"
+              variant='body1'
               paragraph
               sx={{
-                marginTop: "30px",
-                fontFamily: "Helvetica",
-                fontSize: "18px",
+                fontFamily: 'Helvetica',
+                fontSize: '16px',
+                color: '#555',
+                lineHeight: 1.7,
+                mb: 3,
               }}
             >
-              Empowering Boys and Girls, Breaking Barriers, Building Dreams.
+              Empowering Boys and Girls, Breaking Barriers, Building Dreams. We
+              are committed to uplifting children in rural communities through
+              education, health support, and community development.
             </Typography>
-          </Grid>
-
-          {/* Useful Links Section */}
-          <Grid item xs={12} md={2}>
-            <Typography variant="h6" sx={{ fontFamily: "Helvetica", fontWeight: "bold", fontSize: "20px" }}>
-              Useful Links
-            </Typography>
-            <ul style={{ listStyleType: "none" }}>
-              <li style={{ marginTop: "10px", fontFamily: "Helvetica", fontSize: "18px" }}>
-                <Link
-                  href="/"
-                  color="inherit"
-                  sx={{ textDecoration: "none", transition: "color 0.3s ease", "&:hover": { color: "#142d4c" } }}
-                >
-                  Home
-                </Link>
-              </li>
-              <li style={{ marginTop: "15px", fontFamily: "Helvetica", fontSize: "18px" }}>
-                <Link
-                  href="/about"
-                  color="inherit"
-                  sx={{ textDecoration: "none", transition: "color 0.3s ease", "&:hover": { color: "#142d4c" } }}
-                >
-                  Who we are
-                </Link>
-              </li>
-              <li
-                style={{
-                  marginTop: "15px",
-                  fontFamily: "Helvetica",
-                  fontSize: "18px",
-                }}
-              >
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                    "&:hover": { color: "#142d4c" },
-                  }}
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li style={{ marginTop: "15px", fontFamily: "Helvetica", fontSize: "18px" }}>
-                <Link
-                  href="/acknowledgement"
-                  color="inherit"
-                  sx={{ textDecoration: "none", transition: "color 0.3s ease", "&:hover": { color: "#142d4c" } }}
-                >
-                  Our Donors
-                </Link>
-              </li>
-            </ul>
-          </Grid>
-
-          {/* Social Media Section */}
-          <Grid item xs={12} md={4} sx={{ paddingRight: "30px" }}>
-            <Typography
-              variant="h6"
-              sx={{
-                fontFamily: "Helvetica",
-                fontWeight: "bold",
-                fontSize: "20px",
-              }}
-            >
-              Follow Us
-            </Typography>
-            <Typography
-              variant="body1"
-              paragraph
-              sx={{
-                fontFamily: "Helvetica",
-                marginTop: "5px",
-                fontSize: "18px",
-              }}
-            >
-              Stay connected with us for updates, tips, and heartwarming stories. Follow our journey to make a positive
-              impact.
-            </Typography>
-            <Box sx={{ display: "flex", gap: "30px" }}>
+            <Box sx={{ display: 'flex', gap: '16px' }}>
               {[
                 {
-                  color: "#1DA1F2",
+                  color: '#1DA1F2',
                   icon: <Twitter />,
-                  url: "https://twitter.com/MpumeleloFoundation",
+                  url: 'https://twitter.com/MpumeleloFoundation',
                 },
                 {
-                  color: "#1877F2",
+                  color: '#1877F2',
                   icon: <Facebook />,
-                  url: "https://facebook.com/MpumeleloFoundation",
+                  url: 'https://facebook.com/MpumeleloFoundation',
                 },
                 {
-                  color: "#E4405F",
+                  color: '#E4405F',
                   icon: <Instagram />,
-                  url: "https://instagram.com/MpumeleloFoundation",
+                  url: 'https://instagram.com/MpumeleloFoundation',
                 },
                 {
-                  color: "#0A66C2",
+                  color: '#0A66C2',
                   icon: <LinkedIn />,
-                  url: "https://linkedin.com/company/MpumeleloFoundation",
+                  url: 'https://linkedin.com/company/MpumeleloFoundation',
                 },
               ].map(({ color, icon, url }, index) => (
-                <Link
+                <IconButton
                   key={index}
                   href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target='_blank'
+                  rel='noopener noreferrer'
                   sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    color: "#00B5E2",
-                    transition: "all 0.5s ease",
-                    "&:hover": {
-                      backgroundColor: "white",
+                    color: '#00B5E2',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
                       color: color,
+                      transform: 'translateY(-3px)',
                     },
                   }}
                 >
                   {icon}
-                </Link>
+                </IconButton>
               ))}
+            </Box>
+          </Grid>
+
+          {/* Quick Links Section */}
+          <Grid item xs={12} sm={6} md={2}>
+            <Typography
+              variant='h6'
+              sx={{ fontWeight: 'bold', fontSize: '18px', mb: 3 }}
+            >
+              Quick Links
+            </Typography>
+            <Box component='ul' sx={{ listStyleType: 'none', p: 0, m: 0 }}>
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'What We Do', href: '/what-we-do' },
+                { label: 'Why We Do It', href: '/why-we-do-it' },
+                { label: 'Who We Are', href: '/who-we-are' },
+                { label: 'Gallery', href: '/gallery' },
+                { label: 'Blog', href: '/blog' },
+                { label: 'Contact Us', href: '/contact-us' },
+              ].map((link, index) => (
+                <Box component='li' key={index} sx={{ mb: 1.5 }}>
+                  <Link
+                    href={link.href}
+                    sx={{
+                      color: '#555',
+                      textDecoration: 'none',
+                      transition: 'color 0.3s ease',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      '&:hover': {
+                        color: '#00B5E2',
+                        transform: 'translateX(3px)',
+                      },
+                      transform: 'translateX(0)',
+                      transition: 'transform 0.3s ease, color 0.3s ease',
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                </Box>
+              ))}
+            </Box>
+          </Grid>
+
+          {/* Contact Information */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography
+              variant='h6'
+              sx={{ fontWeight: 'bold', fontSize: '18px', mb: 3 }}
+            >
+              Contact Us
+            </Typography>
+            <Box sx={{ mb: 2 }}>
+              <Box sx={{ display: 'flex', mb: 2 }}>
+                <LocationOn sx={{ color: '#00B5E2', mr: 1.5, flexShrink: 0 }} />
+                <Typography
+                  variant='body2'
+                  sx={{ color: '#555', lineHeight: 1.7 }}
+                >
+                  123 Company Street
+                  <br />
+                  Central
+                  <br />
+                  Pretoria, 0001
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', mb: 2 }}>
+                <Phone sx={{ color: '#00B5E2', mr: 1.5, flexShrink: 0 }} />
+                <Typography variant='body2' sx={{ color: '#555' }}>
+                  060 311 6777
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex' }}>
+                <Email sx={{ color: '#00B5E2', mr: 1.5, flexShrink: 0 }} />
+                <Typography variant='body2' sx={{ color: '#555' }}>
+                  info@mpumelelofoundation.co.za
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Newsletter Section */}
+          <Grid item xs={12} md={3}>
+            <Typography
+              variant='h6'
+              sx={{ fontWeight: 'bold', fontSize: '18px', mb: 3 }}
+            >
+              Newsletter
+            </Typography>
+            <Typography variant='body2' sx={{ color: '#555', mb: 2 }}>
+              Subscribe to our newsletter to receive updates on our work and
+              impact.
+            </Typography>
+            <Box sx={{ display: 'flex' }}>
+              <TextField
+                placeholder='Your email'
+                variant='outlined'
+                size='small'
+                sx={{
+                  flexGrow: 1,
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '0',
+                    '& fieldset': {
+                      borderColor: '#e0e0e0',
+                      borderRight: 'none',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: '#00B5E2',
+                    },
+                  },
+                }}
+              />
+              <Button
+                variant='contained'
+                sx={{
+                  backgroundColor: '#00B5E2',
+                  borderRadius: '0',
+                  minWidth: 'auto',
+                  '&:hover': {
+                    backgroundColor: '#0088a9',
+                  },
+                }}
+              >
+                <Send fontSize='small' />
+              </Button>
             </Box>
           </Grid>
         </Grid>
       </Container>
 
-      {/* Add the Divider here */}
-      <Box display="flex" justifyContent="center" width="100%">
-        <Divider
-          sx={{
-            my: 2,
-            backgroundColor: "rgba(255, 255, 255, 0.5)",
-            width: "80%",
-            height: "0.5px",
-          }}
-        />
-      </Box>
+      {/* Divider */}
+      <Container maxWidth='lg'>
+        <Divider sx={{ my: 4 }} />
+      </Container>
 
       {/* Copyright Section */}
-      <Container maxWidth="lg" sx={{ mt: 4, textAlign: "center" }}>
-        <Typography variant="body2">
-          © Copyright <strong>Mpumelelo Foundation</strong> All Rights Reserved
-        </Typography>
-        <Typography variant="body2" sx={{ mt: 1 }}>
-          Designed by{" "}
-          <Link href="https://namoota.co.za/" color="inherit">
-            Namoota
-          </Link>
-        </Typography>
+      <Container maxWidth='lg'>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <Typography
+            variant='body2'
+            sx={{ color: '#777', mb: { xs: 1, sm: 0 } }}
+          >
+            © {new Date().getFullYear()} <strong>Mpumelelo Foundation</strong>.
+            All Rights Reserved.
+          </Typography>
+          <Typography variant='body2' sx={{ color: '#777' }}>
+            Designed by{' '}
+            <Link
+              href='https://namoota.co.za/'
+              color='inherit'
+              sx={{ fontWeight: 'bold', '&:hover': { color: '#00B5E2' } }}
+            >
+              Namoota
+            </Link>
+          </Typography>
+        </Box>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default Footer
-
+export default Footer;
