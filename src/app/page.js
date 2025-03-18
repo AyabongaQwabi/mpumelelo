@@ -1,8 +1,7 @@
-'use client';
-import Hero from './components/Hero';
-import Footer from './components/Footer';
+"use client"
+import Hero from "./components/Hero"
 // import CustomCarousel from './components/HomeCarouselItems';
-import IntroductionSection from './components/IntroductionSecton';
+import IntroductionSection from "./components/IntroductionSecton"
 
 export default function Home() {
   return (
@@ -12,5 +11,6 @@ export default function Home() {
       <IntroductionSection />
       {/* <CustomCarousel /> */}
     </>
-  );
+  )
 }
+

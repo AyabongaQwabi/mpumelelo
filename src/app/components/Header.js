@@ -1,5 +1,4 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Container } from "@mui/material"
 
 export default function Header() {
   return (
@@ -16,5 +15,6 @@ export default function Header() {
         </Toolbar>
       </Container>
     </AppBar>
-  );
+  )
 }
+

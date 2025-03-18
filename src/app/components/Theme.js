@@ -1,20 +1,21 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles"
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#002F6C', // Dark blue similar to the UN Foundation theme
+      main: "#002F6C", // Dark blue similar to the UN Foundation theme
     },
     secondary: {
-      main: '#00B5E2', // Lighter blue
+      main: "#00B5E2", // Lighter blue
     },
     background: {
-      default: '#FFFFFF',
+      default: "#FFFFFF",
     },
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: "Roboto, sans-serif",
   },
-});
+})
 
-export default theme;
+export default theme
+

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Container, Typography, Grid, Card, CardContent } from '@mui/material';
+import { Container, Typography, Grid, Card, CardContent } from "@mui/material"
 
 export default function ContentSection({ title, description, items }) {
   return (
@@ -23,5 +22,6 @@ export default function ContentSection({ title, description, items }) {
         ))}
       </Grid>
     </Container>
-  );
+  )
 }
+
